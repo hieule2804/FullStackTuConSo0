@@ -8,7 +8,11 @@ const PORT=process.env.PORT || 8080; // phải khai báo dòng 5 thì dòng nay 
 
 //comfig view engine
 configViewEngine(app);
+
+
 //init web router
+//giúp express biết có bao nhiêu route 
+//và biết phải làm gì khi user vào 1 đường link
 initWebRouiter(app);
 
 app.listen(PORT ,()=>{

@@ -1,15 +1,21 @@
 import express from "express"; 
-
+import homeController from "../controller/homeController";
 const router =express.Router();
+
+
+
 /**
  * 
  * @param {*} app = express app 
  * @returns 
  */
 const initWebRouiter =(app)=>{
-router.get("/" ,(req ,res)=>{
-return res.send("Hello world");
-})
+    //path , handler
+router.get("/" , homeController.handlehelloworld)
+router.get("/user" ,homeController.handlerUser )
+
+
+//khi chạy trang web thì web sẽ dẫn sử dụng đường link này đầu tiên
 return app.use("/",router);
 
 }
